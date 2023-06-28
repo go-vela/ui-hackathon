@@ -7,12 +7,23 @@ const useProxy = process.env.USE_PROXY;
 export default defineConfig({
   server: {
     port: 8888,
+    cors: {
+      origin: "*",
+    },
     proxy: useProxy
       ? {
           "/api": {
             target: useProxy,
             changeOrigin: true,
           },
+          // "/login": {
+          //   target: useProxy,
+          //   changeOrigin: true,
+          // },
+          // "/authenticate": {
+          //   target: useProxy,
+          //   changeOrigin: true,
+          // },
         }
       : {},
   },

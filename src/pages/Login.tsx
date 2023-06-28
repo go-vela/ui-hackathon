@@ -9,7 +9,7 @@ export function Login() {
         <div>
           <a
             className="btn-primary mb-4"
-            href="http://localhost:8080/login?type=web"
+            href="http://localhost:8888/login?type=web"
             data-test="login-button"
           >
             <div className="flex items-center gap-2">

@@ -41,6 +41,7 @@ import { RepoRoot } from "./pages/RepoRoot";
 import { RepoSecrets } from "./pages/RepoSecrets";
 import { RepoSettings } from "./pages/RepoSettings";
 import { Playground } from "./pages/_Playground";
+import { RepoSecretsAdd } from "./pages/RepoSecretsAdd";
 
 const queryClient = new QueryClient();
 
@@ -200,6 +201,10 @@ const router = createBrowserRouter([
                  */
                 path: "/:org/:repo/$/secrets/:engine",
                 element: <RepoSecrets />,
+              },
+              {
+                path: "/:org/:repo/$/secrets/:engine/add",
+                element: <RepoSecretsAdd />,
               },
               {
                 path: "/:org/:repo/settings",

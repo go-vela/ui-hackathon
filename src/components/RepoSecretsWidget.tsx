@@ -4,6 +4,7 @@ import { IconCopy } from "./IconCopy";
 import { Loader } from "./Loader";
 import { IconGear } from "./IconGear";
 import { Table } from "./Table";
+import { Link } from "react-router-dom";
 
 export interface RepoSecretsWidgetProps {
   org: string;
@@ -47,12 +48,15 @@ export function RepoSecretsWidget({ org, repo }: RepoSecretsWidgetProps) {
         <div>
           {repoSecretsQuery.isSuccess && !repoSecretsQuery.isError ? (
             <>
-              <button className="btn-secondary flex items-center gap-2">
+              <Link
+                to={`/${org}/${repo}/$/secrets/native/add`}
+                className="btn-secondary flex items-center gap-2"
+              >
                 Add Repo Secret
                 <span className="inline-block h-6 w-6">
                   <IconGear />
                 </span>
-              </button>
+              </Link>
             </>
           ) : null}
         </div>
