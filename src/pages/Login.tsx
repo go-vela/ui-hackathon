@@ -1,6 +1,19 @@
+import { useParams } from "react-router";
 import { TopBumper } from "../components/TopBumper";
+import { useEffect } from "react";
 
 export function Login() {
+  const { state, code } = useParams();
+
+  console.log(state)
+  console.log(code)
+
+  useEffect(() => {
+    if(state && code) {
+      console.log(state, code)
+    }
+  }, [state, code])
+
   return (
     <>
       <TopBumper />
@@ -9,7 +22,7 @@ export function Login() {
         <div>
           <a
             className="btn-primary mb-4"
-            href="http://localhost:8888/login?type=web"
+            href={`${import.meta.env.VITE_VELA_API}/login?type=web`}
             data-test="login-button"
           >
             <div className="flex items-center gap-2">
