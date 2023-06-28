@@ -8,7 +8,7 @@ export function RepoSecretsAdd() {
   return (
     <>
       <Helmet>
-        <title>{`Secrets - ${org}/${repo} - Add Native Secret - Vela`}</title>
+        <title>{`Add Native Secret - Secrets - ${org}/${repo} - Vela`}</title>
       </Helmet>
       <TopBumper />
       <div>

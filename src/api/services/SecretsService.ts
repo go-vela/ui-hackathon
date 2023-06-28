@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Secret, SecretCorrected } from "../models/Secret";
+import type { Secret, SecretCorrected, SecretPost } from "../models/Secret";
 
 import type { CancelablePromise } from "../core/CancelablePromise";
 import { OpenAPI } from "../core/OpenAPI";
@@ -62,7 +62,7 @@ export class SecretsService {
     type: "org" | "repo" | "shared",
     org: string,
     name: string,
-    body: Secret
+    body: SecretPost // TODO actually fix the swagger docs so the generated code works
   ): CancelablePromise<Secret> {
     return __request(OpenAPI, {
       method: "POST",
