@@ -1,19 +1,6 @@
-import { useParams } from "react-router";
 import { TopBumper } from "../components/TopBumper";
-import { useEffect } from "react";
 
 export function Login() {
-  const { state, code } = useParams();
-
-  console.log(state)
-  console.log(code)
-
-  useEffect(() => {
-    if(state && code) {
-      console.log(state, code)
-    }
-  }, [state, code])
-
   return (
     <>
       <TopBumper />
