@@ -11,7 +11,11 @@ export function AccountAuthenticate() {
   const params1 = new URLSearchParams(url.search);
   const queryObject: QueryObject = Object.fromEntries(params1.entries());
   const { code, state } = queryObject;
-  const apiUrl = new URL("http://localhost:8080/authenticate");
+  const apiUrl = new URL(
+    import.meta.env.VITE_VELA_API
+      ? `${import.meta.env.VITE_VELA_API}/authenticate`
+      : "http://localhost:8080/authenticate"
+  );
 
   for (const e of params1.entries()) {
     apiUrl.searchParams.set(...e);

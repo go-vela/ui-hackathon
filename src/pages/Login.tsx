@@ -9,7 +9,7 @@ export function Login() {
         <div>
           <a
             className="btn-primary mb-4"
-            href="http://localhost:8888/login?type=web"
+            href={`${import.meta.env.VITE_VELA_API}/login?type=web`}
             data-test="login-button"
           >
             <div className="flex items-center gap-2">
